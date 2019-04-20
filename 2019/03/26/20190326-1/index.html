@@ -296,6 +296,9 @@ var _hmt = _hmt || [];
 </div>
 
 <div class="mask js-mask"></div>
+        <span id="busuanzi_container_page_pv">
+          本文总阅读量：<span id="busuanzi_value_page_pv"></span>
+        </span>
       
       <div class="clearfix"></div>
     </div>
@@ -354,21 +357,36 @@ var _hmt = _hmt || [];
 
 
 
-  
-  
-  
-
-  
-
-  
-
+   
+    <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+      <div id="vcomment" class="comment"></div> 
+<script async src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script async src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "8eTzA6mwqD80ipgSuuFEub1v-gzGzoHsz",
+            app_key: "OzBqWqsC6LVToPn4fXmmSRCB",
+            placeholder: "讲OvO！(只需要填写昵称即可发言)",
+            avatar:""
+        });
+    }
+</script>
+    </section>
   
 
 
           </div>
         </div>
       </div>
-      <footer id="footer">
+      
+
+<footer id="footer">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
@@ -377,9 +395,17 @@ var _hmt = _hmt || [];
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
-    </div>
-  </div>
+		</div>
+		<span id="busuanzi_container_site_pv">
+			本站总访问量<span id="busuanzi_value_site_pv"></span>次
+		</span>
+	  </div>
 </footer>
+	
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
     </div>
     <script>
 	var yiliaConfig = {
