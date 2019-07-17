@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
-  <title>三明二中信息社第一学期期末考试题解 | Neworld2002</title>
+  <title>2019.7.16记 | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
-<meta name="keywords" content="others">
+  <meta name="description" content="做一些事的时候考虑变量归一，这样就不会出现一些奇奇怪怪的问题了。">
+<meta name="keywords" content="思维记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三明二中信息社第一学期期末考试题解">
-<meta property="og:url" content="https://neworld2002.github.io/2019/03/17/20190317/index.html">
+<meta property="og:title" content="2019.7.16记">
+<meta property="og:url" content="https://neworld2002.github.io/2019/07/16/20190716-1/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
+<meta property="og:description" content="做一些事的时候考虑变量归一，这样就不会出现一些奇奇怪怪的问题了。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T12:56:17.079Z">
+<meta property="og:updated_time" content="2019-07-17T09:01:48.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三明二中信息社第一学期期末考试题解">
-<meta name="twitter:description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
+<meta name="twitter:title" content="2019.7.16记">
+<meta name="twitter:description" content="做一些事的时候考虑变量归一，这样就不会出现一些奇奇怪怪的问题了。">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -171,72 +171,28 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20190317" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20190716-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      三明二中信息社第一学期期末考试题解
+      2019.7.16记
     </h1>
   
 
         
-        <a href="/2019/03/17/20190317/" class="archive-article-date">
-  	<time datetime="2019-03-17T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+        <a href="/2019/07/16/20190716-1/" class="archive-article-date">
+  	<time datetime="2019-07-16T15:29:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="https://oj.reallct.com/contest/15" target="_blank" rel="noopener">三明市第二中学信息社 · 从入门到Au · 第一学期期末考试</a></p>
-</blockquote>
-<a id="more"></a>
-<!--显示阅读次数-->
-<h2 id="A-CJL-Loves-Physics"><a href="#A-CJL-Loves-Physics" class="headerlink" title="A. CJL Loves Physics"></a>A. CJL Loves Physics</h2><blockquote>
-<p>出题人：ruridream </p>
-<p>验题人：0_0 smzzl</p>
-</blockquote>
-<ul>
-<li>对于60%的数据，发现$N\leq 16$，比较小，可以尝试搜索，即爆搜每个时间点是否回咕，对于构造的每一组解，只需要遍历一下所有信息，判断是否全部符合，若全部符合即为一组可行解。</li>
-<li>对于100%的数据，裸的2-SAT问题</li>
-</ul>
-<h2 id="B-蓝鸟的快递公司"><a href="#B-蓝鸟的快递公司" class="headerlink" title="B. 蓝鸟的快递公司"></a>B. 蓝鸟的快递公司</h2><blockquote>
-<p>出题人：Neworld2002</p>
-<p>验题人：azaaz</p>
-</blockquote>
-<ul>
-<li>对于前60%的数据，由于$W_i=2147483647$，且保证$\sum w_i \leq 2147483647$，所以我们可以直接忽略，甚至不需要读入</li>
-<li>对于20%的数据，你会发现这是一条链，直接for循环可解</li>
-<li>对于40%的数据，你会发现这是一棵树，<strong>树上两点路径唯一</strong>，且一定为$u - LCA(u,v) -v$，LCA为最近公共祖先，跑一遍LCA即可。但考虑到LCA算法（单次查询$O(\log N)$）不在第一学期的课程之中，这里简单讲一下暴力做法（单次查询$O(N)$）：首先dfs遍历这棵树，维护$depth$数组和$fa$数组，$depth[1] = 1,depth[i] = fa[i]$。接着判断$depth[S]$和$depth[T]$，深度较大的点往上走，$i = fa[i]$，直至两点在同一深度。接着继续往上走，判断两点是否重合，重合点为LCA。一路上经过的所有边的权值和即为答案。</li>
-<li>对于60%的数据，直接单源最短路径算法，输出路径只需要记录每个点被哪个点松弛操作</li>
-<li>对于80%的数据，片区之间的点两两连边</li>
-<li>对于100%的数据，每个片区建立入点和出点。所有点向各自片区的出点连边，入点向所有片区内的点连边，且两种边的权值均为0。接着对于一条边，只需要各自将出点连向入点。通过这个<strong>虚点优化</strong>，边数从$O(N^2)$优化到$O(N)$。</li>
-</ul>
-<h2 id="C-蜘猪侠的拼图"><a href="#C-蜘猪侠的拼图" class="headerlink" title="C. 蜘猪侠的拼图"></a>C. 蜘猪侠的拼图</h2><blockquote>
-<p>出题人：0_0</p>
-<p>验题人：0_0</p>
-</blockquote>
-<ul>
-<li>对于10%的数据点，直接输出</li>
-<li>对于20%的数据点，01背包</li>
-<li>对于40%的数据点，各种特判</li>
-<li>对于60%的数据点，先对所有完整拼图做一次背包，再对剩下的做背包</li>
-<li>对于100%的数据，高精度</li>
-</ul>
-<h2 id="D-物竞仔的几何光学"><a href="#D-物竞仔的几何光学" class="headerlink" title="D. 物竞仔的几何光学"></a>D. 物竞仔的几何光学</h2><blockquote>
-<p>出题人：azaaz</p>
-<p>验题人：Neworld2002</p>
-</blockquote>
-<ul>
-<li>对于20%的数据点，我也不会</li>
-<li>对于60%的数据点，两两连边，跑最小生成树</li>
-<li>对于特殊性质，按$j_i$排序后，选取最近的点连边</li>
-<li>对于100%的数据点，裸的曼哈顿MST</li>
-</ul>
+        <!--显示阅读次数-->
+<p>做一些事的时候考虑变量归一，这样就不会出现一些奇奇怪怪的问题了。</p>
 
       
 
@@ -250,7 +206,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">思维记录</a>
         		</li>
       		
 		</ul>
@@ -306,7 +262,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/03/17/20190317/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/16/20190716-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +279,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/03/19/20190319/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/17/20190717/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          模板 · 整理 · 2-SAT
+          NOIP2009 · 靶型数独
         
       </div>
     </a>
   
   
-    <a href="/2019/03/16/title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">About me</div>
+    <a href="/2019/07/16/20190716/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Educational Codeforces Round 68</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -361,7 +317,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-CJL-Loves-Physics"><span class="toc-number">1.</span> <span class="toc-text">A. CJL Loves Physics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-蓝鸟的快递公司"><span class="toc-number">2.</span> <span class="toc-text">B. 蓝鸟的快递公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-蜘猪侠的拼图"><span class="toc-number">3.</span> <span class="toc-text">C. 蜘猪侠的拼图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-物竞仔的几何光学"><span class="toc-number">4.</span> <span class="toc-text">D. 物竞仔的几何光学</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>

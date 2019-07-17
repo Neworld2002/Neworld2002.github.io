@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
-  <title>三明二中信息社第一学期期末考试题解 | Neworld2002</title>
+  <title>NOIP2009 · 靶型数独 | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
-<meta name="keywords" content="others">
+  <meta name="description" content="搜索剪枝优化真的烦人…… 传送门">
+<meta name="keywords" content="搜索">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三明二中信息社第一学期期末考试题解">
-<meta property="og:url" content="https://neworld2002.github.io/2019/03/17/20190317/index.html">
+<meta property="og:title" content="NOIP2009 · 靶型数独">
+<meta property="og:url" content="https://neworld2002.github.io/2019/07/17/20190717/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
+<meta property="og:description" content="搜索剪枝优化真的烦人…… 传送门">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T12:56:17.079Z">
+<meta property="og:updated_time" content="2019-07-17T09:01:01.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="三明二中信息社第一学期期末考试题解">
-<meta name="twitter:description" content="三明市第二中学信息社 · 从入门到Au · 第一学期期末考试">
+<meta name="twitter:title" content="NOIP2009 · 靶型数独">
+<meta name="twitter:description" content="搜索剪枝优化真的烦人…… 传送门">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -171,72 +171,36 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20190317" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20190717" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      三明二中信息社第一学期期末考试题解
+      NOIP2009 · 靶型数独
     </h1>
   
 
         
-        <a href="/2019/03/17/20190317/" class="archive-article-date">
-  	<time datetime="2019-03-17T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-17</time>
+        <a href="/2019/07/17/20190717/" class="archive-article-date">
+  	<time datetime="2019-07-17T08:01:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="https://oj.reallct.com/contest/15" target="_blank" rel="noopener">三明市第二中学信息社 · 从入门到Au · 第一学期期末考试</a></p>
-</blockquote>
+        <p>搜索剪枝优化真的烦人……</p>
+<p><a href="https://www.luogu.org/problemnew/show/P1074" target="_blank" rel="noopener">传送门</a></p>
 <a id="more"></a>
 <!--显示阅读次数-->
-<h2 id="A-CJL-Loves-Physics"><a href="#A-CJL-Loves-Physics" class="headerlink" title="A. CJL Loves Physics"></a>A. CJL Loves Physics</h2><blockquote>
-<p>出题人：ruridream </p>
-<p>验题人：0_0 smzzl</p>
-</blockquote>
-<ul>
-<li>对于60%的数据，发现$N\leq 16$，比较小，可以尝试搜索，即爆搜每个时间点是否回咕，对于构造的每一组解，只需要遍历一下所有信息，判断是否全部符合，若全部符合即为一组可行解。</li>
-<li>对于100%的数据，裸的2-SAT问题</li>
-</ul>
-<h2 id="B-蓝鸟的快递公司"><a href="#B-蓝鸟的快递公司" class="headerlink" title="B. 蓝鸟的快递公司"></a>B. 蓝鸟的快递公司</h2><blockquote>
-<p>出题人：Neworld2002</p>
-<p>验题人：azaaz</p>
-</blockquote>
-<ul>
-<li>对于前60%的数据，由于$W_i=2147483647$，且保证$\sum w_i \leq 2147483647$，所以我们可以直接忽略，甚至不需要读入</li>
-<li>对于20%的数据，你会发现这是一条链，直接for循环可解</li>
-<li>对于40%的数据，你会发现这是一棵树，<strong>树上两点路径唯一</strong>，且一定为$u - LCA(u,v) -v$，LCA为最近公共祖先，跑一遍LCA即可。但考虑到LCA算法（单次查询$O(\log N)$）不在第一学期的课程之中，这里简单讲一下暴力做法（单次查询$O(N)$）：首先dfs遍历这棵树，维护$depth$数组和$fa$数组，$depth[1] = 1,depth[i] = fa[i]$。接着判断$depth[S]$和$depth[T]$，深度较大的点往上走，$i = fa[i]$，直至两点在同一深度。接着继续往上走，判断两点是否重合，重合点为LCA。一路上经过的所有边的权值和即为答案。</li>
-<li>对于60%的数据，直接单源最短路径算法，输出路径只需要记录每个点被哪个点松弛操作</li>
-<li>对于80%的数据，片区之间的点两两连边</li>
-<li>对于100%的数据，每个片区建立入点和出点。所有点向各自片区的出点连边，入点向所有片区内的点连边，且两种边的权值均为0。接着对于一条边，只需要各自将出点连向入点。通过这个<strong>虚点优化</strong>，边数从$O(N^2)$优化到$O(N)$。</li>
-</ul>
-<h2 id="C-蜘猪侠的拼图"><a href="#C-蜘猪侠的拼图" class="headerlink" title="C. 蜘猪侠的拼图"></a>C. 蜘猪侠的拼图</h2><blockquote>
-<p>出题人：0_0</p>
-<p>验题人：0_0</p>
-</blockquote>
-<ul>
-<li>对于10%的数据点，直接输出</li>
-<li>对于20%的数据点，01背包</li>
-<li>对于40%的数据点，各种特判</li>
-<li>对于60%的数据点，先对所有完整拼图做一次背包，再对剩下的做背包</li>
-<li>对于100%的数据，高精度</li>
-</ul>
-<h2 id="D-物竞仔的几何光学"><a href="#D-物竞仔的几何光学" class="headerlink" title="D. 物竞仔的几何光学"></a>D. 物竞仔的几何光学</h2><blockquote>
-<p>出题人：azaaz</p>
-<p>验题人：Neworld2002</p>
-</blockquote>
-<ul>
-<li>对于20%的数据点，我也不会</li>
-<li>对于60%的数据点，两两连边，跑最小生成树</li>
-<li>对于特殊性质，按$j_i$排序后，选取最近的点连边</li>
-<li>对于100%的数据点，裸的曼哈顿MST</li>
-</ul>
+<hr>
+<p>这题挺像八皇后的，会受到各因素的制约，那对于每个因素开个数组去标记一下就行了。</p>
+<p>然后考虑优化一下搜索顺序，对于某一行，如果空位越少，就优先搜索它，因为空位少受到的制约就多，这样能有效减少冗杂状态。所以一开始记一下每一行的空位，从小到大排序，即为搜索顺序。</p>
+<p>同时这里可以像NOI1999的<a href="https://www.luogu.org/problemnew/show/P1731" target="_blank" rel="noopener">生日蛋糕</a>，在某个状态时，计算之后的最优收益，加上当前答案之后与之前最优解比较，若达不到则提早剪枝。这里我们考虑当填完$x$行时，剩下的$9-x$行全部当作分数为10，每一行的分数和则为450。</p>
+<p>可能因为自身常数较大，最后开了O2才AC，但是其他人是直接AC了emmm……</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> num,cnt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;node) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cnt &gt; node.cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; G[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> row[<span class="number">10</span>][<span class="number">10</span>],col[<span class="number">10</span>][<span class="number">10</span>],pal[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> ans,base;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">int</span> _pal(<span class="keyword">int</span> x,<span class="keyword">int</span> y) &#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=<span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">3</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">6</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">9</span>) <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;=<span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">3</span>) <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">6</span>) <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">if</span>(y&lt;=<span class="number">9</span>) <span class="keyword">return</span> <span class="number">6</span>;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(y&lt;=<span class="number">3</span>) <span class="keyword">return</span> <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">if</span>(y&lt;=<span class="number">6</span>) <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">9</span>;        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">val</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">1</span>||y==<span class="number">1</span>||x==<span class="number">9</span>||y==<span class="number">9</span>) <span class="keyword">return</span> <span class="number">6</span>;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">2</span>||y==<span class="number">2</span>||x==<span class="number">8</span>||y==<span class="number">8</span>) <span class="keyword">return</span> <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">3</span>||y==<span class="number">3</span>||x==<span class="number">7</span>||y==<span class="number">7</span>) <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">4</span>||y==<span class="number">4</span>||x==<span class="number">6</span>||y==<span class="number">6</span>) <span class="keyword">return</span> <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> xx,<span class="keyword">int</span> y,<span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(sum+(<span class="number">19</span>-xx-y)*<span class="number">450</span>&lt;=ans) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(y==<span class="number">10</span>) xx++,y = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(xx==<span class="number">10</span>) &#123;</span><br><span class="line">        ans = ans &lt; sum ? sum : ans;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> x = G[xx].num;</span><br><span class="line">    <span class="keyword">if</span>(vis[x][y]) dfs(xx,y+<span class="number">1</span>,sum);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(row[x][i]||col[y][i]||pal[_pal(x,y)][i]) <span class="keyword">continue</span>;</span><br><span class="line">        row[x][i] = col[y][i] = pal[_pal(x,y)][i] = <span class="literal">true</span>;</span><br><span class="line">        dfs(xx,y+<span class="number">1</span>,sum+i*val(x,y));</span><br><span class="line">        row[x][i] = col[y][i] = pal[_pal(x,y)][i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> temp; base = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;++j) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp);</span><br><span class="line">        <span class="keyword">if</span>(temp!=<span class="number">0</span>) &#123;</span><br><span class="line">            vis[i][j] = <span class="literal">true</span>;</span><br><span class="line">            row[i][temp] = <span class="literal">true</span>;</span><br><span class="line">            col[j][temp] = <span class="literal">true</span>;</span><br><span class="line">            pal[_pal(i,j)][temp] = <span class="literal">true</span>;</span><br><span class="line">            base += val(i,j)*temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;++i) &#123;</span><br><span class="line">        G[i].num = i; G[i].cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">9</span>;++j) G[i].cnt += vis[i][j];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::sort(G+<span class="number">1</span>,G+<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">    ans = <span class="number">0</span>;</span><br><span class="line">    dfs(<span class="number">1</span>,<span class="number">1</span>,base);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(ans!=<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -250,7 +214,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">others</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">搜索</a>
         		</li>
       		
 		</ul>
@@ -306,7 +270,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/03/17/20190317/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/17/20190717/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +287,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/03/19/20190319/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          模板 · 整理 · 2-SAT
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/16/title/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">About me</div>
+    <a href="/2019/07/16/20190716-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2019.7.16记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -361,7 +316,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-CJL-Loves-Physics"><span class="toc-number">1.</span> <span class="toc-text">A. CJL Loves Physics</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-蓝鸟的快递公司"><span class="toc-number">2.</span> <span class="toc-text">B. 蓝鸟的快递公司</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-蜘猪侠的拼图"><span class="toc-number">3.</span> <span class="toc-text">C. 蜘猪侠的拼图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-物竞仔的几何光学"><span class="toc-number">4.</span> <span class="toc-text">D. 物竞仔的几何光学</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
