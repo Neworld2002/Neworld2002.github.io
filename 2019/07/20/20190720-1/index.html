@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
-  <title>关于贪心的整理 | Neworld2002</title>
+  <title>UVa10382 Watering Grass | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
-<meta name="keywords" content="贪心,笔记">
+  <meta name="description" content="因为和LOJ的读入不一样，卡了我好久…… 传送门">
+<meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于贪心的整理">
-<meta property="og:url" content="https://neworld2002.github.io/2019/07/20/20190720/index.html">
+<meta property="og:title" content="UVa10382 Watering Grass">
+<meta property="og:url" content="https://neworld2002.github.io/2019/07/20/20190720-1/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
+<meta property="og:description" content="因为和LOJ的读入不一样，卡了我好久…… 传送门">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T13:55:53.975Z">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/1047463/201703/1047463-20170307185758859-124691323.png">
+<meta property="og:updated_time" content="2019-07-20T08:00:01.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于贪心的整理">
-<meta name="twitter:description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
+<meta name="twitter:title" content="UVa10382 Watering Grass">
+<meta name="twitter:description" content="因为和LOJ的读入不一样，卡了我好久…… 传送门">
+<meta name="twitter:image" content="https://images2015.cnblogs.com/blog/1047463/201703/1047463-20170307185758859-124691323.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -171,68 +173,40 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20190720" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20190720-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于贪心的整理
+      UVa10382 Watering Grass
     </h1>
   
 
         
-        <a href="/2019/07/20/20190720/" class="archive-article-date">
-  	<time datetime="2019-07-20T03:32:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+        <a href="/2019/07/20/20190720-1/" class="archive-article-date">
+  	<time datetime="2019-07-20T07:53:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题型整理"><a href="#题型整理" class="headerlink" title="题型整理"></a>题型整理</h3><h5 id="一、选择不相交区间"><a href="#一、选择不相交区间" class="headerlink" title="一、选择不相交区间"></a>一、选择不相交区间</h5><blockquote>
-<p>给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。</p>
-</blockquote>
-<ul>
-<li>按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选</li>
-<li>正确性：结束得越快，显然对后面影响越小</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/P1803" target="_blank" rel="noopener">例题</a></p>
-<h5 id="二、区间选点"><a href="#二、区间选点" class="headerlink" title="二、区间选点"></a>二、区间选点</h5><blockquote>
-<p>给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。</p>
-</blockquote>
-<ul>
-<li>按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加一个点。</li>
-<li>正确性：点越靠后，覆盖的区间肯定越多。</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/P1250" target="_blank" rel="noopener">例题</a></p>
-<h5 id="三、区间覆盖"><a href="#三、区间覆盖" class="headerlink" title="三、区间覆盖"></a>三、区间覆盖</h5><blockquote>
-<p>给定$n$个区间$(a_i,b_i)$，选出最少的区间，使得线段$[s,t]$被覆盖</p>
-</blockquote>
-<ul>
-<li>按左端点排序，找出可以覆盖$s$点的所有区间中，右端点最大的那个（这里不能是长度,可能会无限向前延伸）。并且把$s$点改为该区间左端点，重复过程，直至$t$被覆盖。</li>
-<li>正确性：右端点越大，后面需要选的区间就越少。</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/UVA10382" target="_blank" rel="noopener">例题</a></p>
-<p><a href="https://loj.ac/problem/10002" target="_blank" rel="noopener">该题翻译</a>（注意LOJ的读入格式和UVa的读入不一致，UVa数据更强）</p>
-<h5 id="四、流水作业调度"><a href="#四、流水作业调度" class="headerlink" title="四、流水作业调度"></a>四、流水作业调度</h5><blockquote>
-<p>$n$个作业在两台机器$M_1,M_2$上运作，对于第$i$个作业，其在两台机器上的工作时间分别为$a_i,b_i$，每个作业必须先在$M_1$后在$M_2$上工作。求一个工作顺序，使得总工时最短。</p>
-</blockquote>
-<ul>
-<li>太难了我不会</li>
-<li>过程略长，戳这里</li>
-</ul>
-<p><a href="https://loj.ac/problem/10003" target="_blank" rel="noopener">例题</a></p>
-<h5 id="五、带限期、罚款的时间任务调度"><a href="#五、带限期、罚款的时间任务调度" class="headerlink" title="五、带限期、罚款的时间任务调度"></a>五、带限期、罚款的时间任务调度</h5><blockquote>
-<p>$n$个任务，每个任务需要一个单位时间完成，且必须在时间$d_i$前完成。超过$d_i$则有$w_i$的惩罚。</p>
-<p>确定执行任务的时间和顺序，使得罚款最少。</p>
-</blockquote>
-<ul>
-<li>罚款最大的要优先安排，并且让其时间尽量接近$d_i$。若$d_i$前已无时间，则放弃。</li>
-<li>正确性：由于罚款最大优先安排，且时间尽量靠近$d_i$，空出更多的时间留给限制更紧的任务，且后续任务的价值更小。</li>
-</ul>
-<p><a href="https://loj.ac/problem/10004" target="_blank" rel="noopener">例题</a></p>
+        <p>因为和LOJ的读入不一样，卡了我好久……</p>
+<p><a href="https://www.luogu.org/problemnew/show/UVA10382" target="_blank" rel="noopener">传送门</a></p>
+<a id="more"></a>
+<!--显示阅读次数-->
+<hr>
+<p>首先这个圆形……是不会完全覆盖$[x-r,x+r]$这段区间的……</p>
+<p>应该是矩形才对……</p>
+<p><img src="https://images2015.cnblogs.com/blog/1047463/201703/1047463-20170307185758859-124691323.png" alt="img"></p>
+<p>用勾股定理求得$(a_i,b_i)$</p>
+<p>然后就是比较裸的区间覆盖问题了，贪心可解。</p>
+<p>按左端点排序，找出可以覆盖0点的所有区间中，右端点最大的那个（这里不能是长度,可能会无限向前延伸）。并且把0点改为该区间左端点，重复过程，直至$t$被覆盖。</p>
+<p>特判一开始是否存在小等于0的点，否则直接退出</p>
+<p>然后半径有可能很大，所以全部换double最保险。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100000</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;node) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x &lt; node.x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; G[MAXN];</span><br><span class="line"><span class="keyword">int</span> T,N;</span><br><span class="line"><span class="keyword">double</span> L,W;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">0</span>,f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>) &#123; <span class="keyword">if</span>(ch==<span class="string">'-'</span>) f = <span class="number">-1</span>; ch = getchar(); &#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>) num = num*<span class="number">10</span>+ch<span class="number">-48</span>,ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i) &#123;</span><br><span class="line">        <span class="keyword">double</span> pos = read(); <span class="keyword">double</span> r = read();</span><br><span class="line">        <span class="keyword">if</span>(r*<span class="number">2</span>&lt;W) <span class="keyword">continue</span>;</span><br><span class="line">        G[++tot].x = pos - <span class="built_in">sqrt</span>(r*r-(W*W)/<span class="number">4.0</span>);</span><br><span class="line">        G[tot].y = pos + <span class="built_in">sqrt</span>(r*r-(W*W)/<span class="number">4.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::sort(G+<span class="number">1</span>,G+<span class="number">1</span>+tot);</span><br><span class="line">    <span class="keyword">if</span>(G[<span class="number">1</span>].x&gt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">double</span> point = <span class="number">0</span>; <span class="keyword">int</span> ans = <span class="number">0</span>; <span class="keyword">double</span> maxx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;++i) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(G[i].x&gt;point) &#123;</span><br><span class="line">            ans ++; point = maxx; maxx = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(point&gt;=L) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(G[i].x&lt;=point) maxx = <span class="built_in">std</span>::max(maxx,G[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(maxx&gt;=L) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%lf%lf"</span>,&amp;N,&amp;L,&amp;W)!=EOF) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!work()) <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -247,10 +221,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -306,7 +276,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/20/20190720/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/20/20190720-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -323,18 +293,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/07/20/20190720-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          UVa10382 Watering Grass
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/17/20190717/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NOIP2009 · 靶型数独</div>
+    <a href="/2019/07/20/20190720/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于贪心的整理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -361,7 +322,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题型整理"><span class="toc-number">1.</span> <span class="toc-text">题型整理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、选择不相交区间"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、选择不相交区间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、区间选点"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、区间选点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、区间覆盖"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、区间覆盖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、流水作业调度"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、流水作业调度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五、带限期、罚款的时间任务调度"><span class="toc-number">1.0.5.</span> <span class="toc-text">五、带限期、罚款的时间任务调度</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>

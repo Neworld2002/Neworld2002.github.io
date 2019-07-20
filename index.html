@@ -171,6 +171,81 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-20190720-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/20190720-1/">UVa10382 Watering Grass</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/20/20190720-1/" class="archive-article-date">
+  	<time datetime="2019-07-20T07:53:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为和LOJ的读入不一样，卡了我好久……</p>
+<p><a href="https://www.luogu.org/problemnew/show/UVA10382" target="_blank" rel="noopener">传送门</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/20/20190720-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-20190720" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -178,7 +253,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/20190720/">20190720</a>
+      <a class="article-title" href="/2019/07/20/20190720/">关于贪心的整理</a>
     </h1>
   
 
@@ -191,7 +266,49 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="题型整理"><a href="#题型整理" class="headerlink" title="题型整理"></a>题型整理</h3><h5 id="一、选择不相交区间"><a href="#一、选择不相交区间" class="headerlink" title="一、选择不相交区间"></a>一、选择不相交区间</h5><blockquote>
+<p>给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。</p>
+</blockquote>
+<ul>
+<li>按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选</li>
+<li>正确性：结束得越快，显然对后面影响越小</li>
+</ul>
+<p><a href="https://www.luogu.org/problemnew/show/P1803" target="_blank" rel="noopener">例题</a></p>
+<h5 id="二、区间选点"><a href="#二、区间选点" class="headerlink" title="二、区间选点"></a>二、区间选点</h5><blockquote>
+<p>给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。</p>
+</blockquote>
+<ul>
+<li>按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加一个点。</li>
+<li>正确性：点越靠后，覆盖的区间肯定越多。</li>
+</ul>
+<p><a href="https://www.luogu.org/problemnew/show/P1250" target="_blank" rel="noopener">例题</a></p>
+<h5 id="三、区间覆盖"><a href="#三、区间覆盖" class="headerlink" title="三、区间覆盖"></a>三、区间覆盖</h5><blockquote>
+<p>给定$n$个区间$(a_i,b_i)$，选出最少的区间，使得线段$[s,t]$被覆盖</p>
+</blockquote>
+<ul>
+<li>按左端点排序，找出可以覆盖$s$点的所有区间中，右端点最大的那个（这里不能是长度,可能会无限向前延伸）。并且把$s$点改为该区间左端点，重复过程，直至$t$被覆盖。</li>
+<li>正确性：右端点越大，后面需要选的区间就越少。</li>
+</ul>
+<p><a href="https://www.luogu.org/problemnew/show/UVA10382" target="_blank" rel="noopener">例题</a></p>
+<p><a href="https://loj.ac/problem/10002" target="_blank" rel="noopener">该题翻译</a>（注意LOJ的读入格式和UVa的读入不一致，UVa数据更强）</p>
+<h5 id="四、流水作业调度"><a href="#四、流水作业调度" class="headerlink" title="四、流水作业调度"></a>四、流水作业调度</h5><blockquote>
+<p>$n$个作业在两台机器$M_1,M_2$上运作，对于第$i$个作业，其在两台机器上的工作时间分别为$a_i,b_i$，每个作业必须先在$M_1$后在$M_2$上工作。求一个工作顺序，使得总工时最短。</p>
+</blockquote>
+<ul>
+<li>太难了我不会</li>
+<li>过程略长，戳这里</li>
+</ul>
+<p><a href="https://loj.ac/problem/10003" target="_blank" rel="noopener">例题</a></p>
+<h5 id="五、带限期、罚款的时间任务调度"><a href="#五、带限期、罚款的时间任务调度" class="headerlink" title="五、带限期、罚款的时间任务调度"></a>五、带限期、罚款的时间任务调度</h5><blockquote>
+<p>$n$个任务，每个任务需要一个单位时间完成，且必须在时间$d_i$前完成。超过$d_i$则有$w_i$的惩罚。</p>
+<p>确定执行任务的时间和顺序，使得罚款最少。</p>
+</blockquote>
+<ul>
+<li>罚款最大的要优先安排，并且让其时间尽量接近$d_i$。若$d_i$前已无时间，则放弃。</li>
+<li>正确性：由于罚款最大优先安排，且时间尽量靠近$d_i$，空出更多的时间留给限制更紧的任务，且后续任务的价值更小。</li>
+</ul>
+<p><a href="https://loj.ac/problem/10004" target="_blank" rel="noopener">例题</a></p>
+
       
 
       
@@ -199,6 +316,21 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -850,88 +982,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-20190326-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/26/20190326-1/">HNOI2010 · 平面图判定 · Luogu3209</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/26/20190326-1/" class="archive-article-date">
-  	<time datetime="2019-03-26T14:23:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://www.luogu.org/problemnew/show/P3209" target="_blank" rel="noopener">传送门</a></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">2-SAT</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">平面图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">并查集</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/26/20190326-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1076,15 +1126,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Neworld2002</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">二分答案</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">思维记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1100,7 +1142,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Neworld2002</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">codeforces</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">思维记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1108,7 +1162,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">枚举</a>
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
             
             <div class="clearfix"></div>
