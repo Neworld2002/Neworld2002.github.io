@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
-  <title>Educational Codeforces Round 68 | Neworld2002</title>
+  <title>Tag: Neworld2002 | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="好久没有打cf了，不出意料地掉了好多分emmm 传送门">
-<meta name="keywords" content="codeforces">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Educational Codeforces Round 68">
-<meta property="og:url" content="https://neworld2002.github.io/2019/07/16/20190716/index.html">
+  <meta name="description" content="an oier">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Neworld2002">
+<meta property="og:url" content="https://neworld2002.github.io/tags/Neworld2002/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="好久没有打cf了，不出意料地掉了好多分emmm 传送门">
+<meta property="og:description" content="an oier">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-16T10:22:05.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Educational Codeforces Round 68">
-<meta name="twitter:description" content="好久没有打cf了，不出意料地掉了好多分emmm 传送门">
+<meta name="twitter:title" content="Neworld2002">
+<meta name="twitter:description" content="an oier">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -171,217 +169,98 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-20190716" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Educational Codeforces Round 68
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/04/12/20190412/" class="archive-article-date">
+  	<time datetime="2019-04-12T10:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/04/12/20190412/">FJOI2019游记</a>
     </h1>
   
 
-        
-        <a href="/2019/07/16/20190716/" class="archive-article-date">
-  	<time datetime="2019-07-16T09:45:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好久没有打cf了，不出意料地掉了好多分emmm</p>
-<p><a href="https://codeforces.com/contest/1194" target="_blank" rel="noopener">传送门</a></p>
-<a id="more"></a>
-<!--显示阅读次数-->
-<hr>
-<h3 id="A-Remove-a-Progression"><a href="#A-Remove-a-Progression" class="headerlink" title="A.  Remove a Progression"></a>A.  Remove a Progression</h3><blockquote>
-<p>第i次删掉剩下的数中第i个数，当剩下的数不足i个时停止。询问剩下的数中，第$x$个是多少。</p>
-</blockquote>
-<p>这题手动尝试就可以知道会把所有奇数全部删掉。</p>
-<p>所以直接输出第$x$个偶数即可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> N,X;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=T;++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%I64d%I64d"</span>,&amp;N,&amp;X);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>, <span class="number">2</span>*X);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="B-Yet-Another-Crosses-Problem"><a href="#B-Yet-Another-Crosses-Problem" class="headerlink" title="B.  Yet Another Crosses Problem"></a>B.  Yet Another Crosses Problem</h3><blockquote>
-<p>某个点$(x,y)$满足所在横行和纵行的所有点全部是黑色时，$(x,y)$被称为cross。给你一个$N\times M$ 的网格图，求填黑最少的格子，使其至少出现一个cross。</p>
-</blockquote>
-<p>我们可以观察到$N \times M$非常小，所以可以思考去做一个$O(NM)$的算法。</p>
-<p>记$(x,y)$所在的横行和纵行的白格子数分别为$row[x],col[y]$</p>
-<p>我们发现我们只需要找出最小的$row[x]+col[y]$即可。</p>
-<p>但是当$(x,y)$是白格子时，会出现重复计算，需要扣掉1</p>
-<p>这里可以使用vector、set、map等进行记忆</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 50005</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;A) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (A.x==x) ? (A.y&lt;y) : (A.x&lt;x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">set</span>&lt;Node&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> row[MAXN],col[MAXN];</span><br><span class="line"><span class="keyword">int</span> N,M,T;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch!=<span class="string">'.'</span>&amp;&amp;ch!=<span class="string">'*'</span>) ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> ch == <span class="string">'.'</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d\n"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=T;++k) &#123;</span><br><span class="line"> </span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">memset</span>(row,<span class="number">0</span>,<span class="keyword">sizeof</span>(row));</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">memset</span>(col,<span class="number">0</span>,<span class="keyword">sizeof</span>(col));</span><br><span class="line">        mp.clear();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;M);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=M;++j) &#123;</span><br><span class="line">            <span class="keyword">bool</span> f = read();</span><br><span class="line">            <span class="keyword">if</span>(f) row[i] ++, col[j] ++;</span><br><span class="line">            <span class="keyword">if</span>(f) mp.insert((Node)&#123;i,j&#125;);</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">2147483647</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=M;++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(mp.count((Node)&#123;i,j&#125;)) ans = <span class="built_in">std</span>::min(ans,row[i]+col[j]<span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">else</span> ans = <span class="built_in">std</span>::min(ans,row[i]+col[j]);</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>vector应该会更好写</p>
-<h3 id="C-From-S-To-T"><a href="#C-From-S-To-T" class="headerlink" title="C.  From S To T"></a>C.  From S To T</h3><blockquote>
-<p>给你$s,t,p$三个由小写字母组成的字符串，你可以从$p$中删掉任意个字符，并插入到$s$的任意位置，询问是否可以使得$s=t$</p>
-</blockquote>
-<p>由于$s$的字符只会增加，不会减少，所以$s$必须是$t$的子序列，也就是说：$s$中有的字符$t$必须有，且相对顺序一致。</p>
-<p>然后因为从$p$拿过来的字符是可以放在任意位置，所以当$s$和$p$的各种字符数都比$t$多，不会出现$t$有，而$s$和$p$都没有或者不够的情况，这样可以认为$s$可以变成$t$。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 1000</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> book[<span class="number">200</span>];</span><br><span class="line"><span class="keyword">char</span> s[MAXN],t[MAXN],p[MAXN];</span><br><span class="line"><span class="keyword">int</span> len_1,len_2,len_3;</span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span> s[],<span class="keyword">int</span>* len)</span> </span>&#123;</span><br><span class="line">    *len = <span class="number">0</span>; s[*len] = getchar();</span><br><span class="line">    <span class="keyword">while</span>(s[*len]&lt;<span class="string">'a'</span>||s[*len]&gt;<span class="string">'z'</span>) s[*len] = getchar();</span><br><span class="line">    <span class="keyword">while</span>(s[*len]&gt;=<span class="string">'a'</span>&amp;&amp;s[*len]&lt;=<span class="string">'z'</span>) s[++(*len)] = getchar();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    read(s,&amp;len_1); read(t,&amp;len_2); read(p,&amp;len_3);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> last = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len_1;++i) &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=last+<span class="number">1</span>;j&lt;len_2;++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==t[j]) &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                last = j;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!flag) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">memset</span>(book,<span class="number">0</span>,<span class="keyword">sizeof</span>(book));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len_1;++i) book[<span class="keyword">int</span>(s[i])]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len_3;++i) book[<span class="keyword">int</span>(p[i])]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len_2;++i) &#123;</span><br><span class="line">        book[<span class="keyword">int</span>(t[i])]--;</span><br><span class="line">        <span class="keyword">if</span>(book[<span class="keyword">int</span>(t[i])]&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=T;++k) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!work()) <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="D-1-2-K-Game"><a href="#D-1-2-K-Game" class="headerlink" title="D.  1-2-K Game"></a>D.  1-2-K Game</h3><blockquote>
-<p>一开始你站在第$N$个格子上，另一端是0，每次你可以向前移动1、2、K格，$Alice$先手，当不能移动时为负。给定$N,K$询问输赢</p>
-</blockquote>
-<p>先考虑不存在$K$，写写画画可发现$N=0,3,6,9,12……$时$Alice$必败。</p>
-<p>若$K \bmod 3 \neq 0$，我们发现并不能从一个必败态走到另一个必败态（对自己是必胜态），所以当$K$不存在就行了。</p>
-<p>若$K \bmod 3=0$，写写画画可以发现会必胜态和必败态出现一个长度为$K+1$的循环节，所以直接对$K+1$取余，在长度为$K+1$的区间内，只有$K$这个位置和其他不被3整除的位置是必胜态，否则反之。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T,N,K;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;K);</span><br><span class="line">    <span class="keyword">if</span>(K%<span class="number">3</span>!=<span class="number">0</span>) <span class="keyword">return</span> N%<span class="number">3</span>!=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        N %= (K+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> (N%<span class="number">3</span>!=<span class="number">0</span>)||(N==K);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=T;++i) &#123;</span><br><span class="line">        <span class="built_in">puts</span>(work()?<span class="string">"Alice"</span>:<span class="string">"Bob"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Neworld2002</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/16/20190716/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-        <span id="busuanzi_container_page_pv">
-          本文总阅读量：<span id="busuanzi_value_page_pv"></span>
-        </span>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/07/16/20190716-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2019.7.16记
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/07/11/20190711/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">NOIP · 一元三次方程求解</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/16/title/" class="archive-article-date">
+  	<time datetime="2019-03-16T15:45:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Remove-a-Progression"><span class="toc-number">1.</span> <span class="toc-text">A.  Remove a Progression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-Yet-Another-Crosses-Problem"><span class="toc-number">2.</span> <span class="toc-text">B.  Yet Another Crosses Problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-From-S-To-T"><span class="toc-number">3.</span> <span class="toc-text">C.  From S To T</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-1-2-K-Game"><span class="toc-number">4.</span> <span class="toc-text">D.  1-2-K Game</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-   
-    <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-      <div id="vcomment" class="comment"></div> 
-<script async src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script async src="//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "8eTzA6mwqD80ipgSuuFEub1v-gzGzoHsz",
-            app_key: "OzBqWqsC6LVToPn4fXmmSRCB",
-            placeholder: "讲OvO！(只需要填写昵称即可发言)",
-            avatar:""
-        });
-    }
-</script>
-    </section>
+    	 
   
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/16/title/">About me</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Neworld2002</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -414,9 +293,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
