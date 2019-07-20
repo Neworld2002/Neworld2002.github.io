@@ -266,49 +266,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题型整理"><a href="#题型整理" class="headerlink" title="题型整理"></a>题型整理</h3><h5 id="一、选择不相交区间"><a href="#一、选择不相交区间" class="headerlink" title="一、选择不相交区间"></a>一、选择不相交区间</h5><blockquote>
-<p>给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。</p>
+        <blockquote>
+<p>《信息学奥赛一本通 · 提高篇》笔记</p>
 </blockquote>
-<ul>
-<li>按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选</li>
-<li>正确性：结束得越快，显然对后面影响越小</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/P1803" target="_blank" rel="noopener">例题</a></p>
-<h5 id="二、区间选点"><a href="#二、区间选点" class="headerlink" title="二、区间选点"></a>二、区间选点</h5><blockquote>
-<p>给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。</p>
-</blockquote>
-<ul>
-<li>按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加一个点。</li>
-<li>正确性：点越靠后，覆盖的区间肯定越多。</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/P1250" target="_blank" rel="noopener">例题</a></p>
-<h5 id="三、区间覆盖"><a href="#三、区间覆盖" class="headerlink" title="三、区间覆盖"></a>三、区间覆盖</h5><blockquote>
-<p>给定$n$个区间$(a_i,b_i)$，选出最少的区间，使得线段$[s,t]$被覆盖</p>
-</blockquote>
-<ul>
-<li>按左端点排序，找出可以覆盖$s$点的所有区间中，右端点最大的那个（这里不能是长度,可能会无限向前延伸）。并且把$s$点改为该区间左端点，重复过程，直至$t$被覆盖。</li>
-<li>正确性：右端点越大，后面需要选的区间就越少。</li>
-</ul>
-<p><a href="https://www.luogu.org/problemnew/show/UVA10382" target="_blank" rel="noopener">例题</a></p>
-<p><a href="https://loj.ac/problem/10002" target="_blank" rel="noopener">该题翻译</a>（注意LOJ的读入格式和UVa的读入不一致，UVa数据更强）</p>
-<h5 id="四、流水作业调度"><a href="#四、流水作业调度" class="headerlink" title="四、流水作业调度"></a>四、流水作业调度</h5><blockquote>
-<p>$n$个作业在两台机器$M_1,M_2$上运作，对于第$i$个作业，其在两台机器上的工作时间分别为$a_i,b_i$，每个作业必须先在$M_1$后在$M_2$上工作。求一个工作顺序，使得总工时最短。</p>
-</blockquote>
-<ul>
-<li>太难了我不会</li>
-<li>过程略长，戳这里</li>
-</ul>
-<p><a href="https://loj.ac/problem/10003" target="_blank" rel="noopener">例题</a></p>
-<h5 id="五、带限期、罚款的时间任务调度"><a href="#五、带限期、罚款的时间任务调度" class="headerlink" title="五、带限期、罚款的时间任务调度"></a>五、带限期、罚款的时间任务调度</h5><blockquote>
-<p>$n$个任务，每个任务需要一个单位时间完成，且必须在时间$d_i$前完成。超过$d_i$则有$w_i$的惩罚。</p>
-<p>确定执行任务的时间和顺序，使得罚款最少。</p>
-</blockquote>
-<ul>
-<li>罚款最大的要优先安排，并且让其时间尽量接近$d_i$。若$d_i$前已无时间，则放弃。</li>
-<li>正确性：由于罚款最大优先安排，且时间尽量靠近$d_i$，空出更多的时间留给限制更紧的任务，且后续任务的价值更小。</li>
-</ul>
-<p><a href="https://loj.ac/problem/10004" target="_blank" rel="noopener">例题</a></p>
-
+        
       
 
       

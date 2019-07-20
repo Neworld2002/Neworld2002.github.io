@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
   <title>关于贪心的整理 | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
+  <meta name="description" content="《信息学奥赛一本通 · 提高篇》笔记">
 <meta name="keywords" content="贪心,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于贪心的整理">
 <meta property="og:url" content="https://neworld2002.github.io/2019/07/20/20190720/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
+<meta property="og:description" content="《信息学奥赛一本通 · 提高篇》笔记">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T13:55:53.975Z">
+<meta property="og:updated_time" content="2019-07-20T13:58:39.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于贪心的整理">
-<meta name="twitter:description" content="题型整理一、选择不相交区间 给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。   按结束时间排序，若某区间开始时间在之前选中的区间的结束时间之后，则可选 正确性：结束得越快，显然对后面影响越小  例题 二、区间选点 给定$n$个闭区间$(a_i,b_i)$，在数轴上添加最少的点，使得每个区间至少有一个点。   按右端点排序，若当前区间不能被上一个点覆盖，则在该区间最后添加">
+<meta name="twitter:description" content="《信息学奥赛一本通 · 提高篇》笔记">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -191,7 +191,13 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题型整理"><a href="#题型整理" class="headerlink" title="题型整理"></a>题型整理</h3><h5 id="一、选择不相交区间"><a href="#一、选择不相交区间" class="headerlink" title="一、选择不相交区间"></a>一、选择不相交区间</h5><blockquote>
+        <blockquote>
+<p>《信息学奥赛一本通 · 提高篇》笔记</p>
+</blockquote>
+<a id="more"></a>
+<!--显示阅读次数-->
+<hr>
+<h3 id="题型整理"><a href="#题型整理" class="headerlink" title="题型整理"></a>题型整理</h3><h5 id="一、选择不相交区间"><a href="#一、选择不相交区间" class="headerlink" title="一、选择不相交区间"></a>一、选择不相交区间</h5><blockquote>
 <p>给定$n$个区间$(a_i,b_i)$，选择尽量多个区间，使得其无公共点。</p>
 </blockquote>
 <ul>
@@ -223,7 +229,7 @@ var _hmt = _hmt || [];
 <li>太难了我不会</li>
 <li>过程略长，戳这里</li>
 </ul>
-<p><a href="https://loj.ac/problem/10003" target="_blank" rel="noopener">例题</a></p>
+<p><a href="https://www.luogu.org/problemnew/show/P1248" target="_blank" rel="noopener">例题</a></p>
 <h5 id="五、带限期、罚款的时间任务调度"><a href="#五、带限期、罚款的时间任务调度" class="headerlink" title="五、带限期、罚款的时间任务调度"></a>五、带限期、罚款的时间任务调度</h5><blockquote>
 <p>$n$个任务，每个任务需要一个单位时间完成，且必须在时间$d_i$前完成。超过$d_i$则有$w_i$的惩罚。</p>
 <p>确定执行任务的时间和顺序，使得罚款最少。</p>
@@ -232,7 +238,7 @@ var _hmt = _hmt || [];
 <li>罚款最大的要优先安排，并且让其时间尽量接近$d_i$。若$d_i$前已无时间，则放弃。</li>
 <li>正确性：由于罚款最大优先安排，且时间尽量靠近$d_i$，空出更多的时间留给限制更紧的任务，且后续任务的价值更小。</li>
 </ul>
-<p><a href="https://loj.ac/problem/10004" target="_blank" rel="noopener">例题</a></p>
+<p><a href="https://www.luogu.org/problemnew/show/P1230" target="_blank" rel="noopener">例题</a></p>
 
       
 
