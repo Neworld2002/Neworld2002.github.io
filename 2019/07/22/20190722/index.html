@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://neworld2002.github.io">
-  <title>About me | Neworld2002</title>
+  <title>洛谷1842 · 奶牛玩杂技 | Neworld2002</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我是Neworld2002，也可以叫我蓝鸟。 之前一直在博客园，现在决定迁到这里来。 目标：省队！">
-<meta name="keywords" content="Neworld2002">
+  <meta name="description" content="说实话一开始我不懂这题怎么想…… 但是在流水作业调度问题的启发下，我尝试了列式子假设，没想到就解出来了！ 传送门">
+<meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About me">
-<meta property="og:url" content="https://neworld2002.github.io/2019/03/16/title/index.html">
+<meta property="og:title" content="洛谷1842 · 奶牛玩杂技">
+<meta property="og:url" content="https://neworld2002.github.io/2019/07/22/20190722/index.html">
 <meta property="og:site_name" content="Neworld2002">
-<meta property="og:description" content="我是Neworld2002，也可以叫我蓝鸟。 之前一直在博客园，现在决定迁到这里来。 目标：省队！">
+<meta property="og:description" content="说实话一开始我不懂这题怎么想…… 但是在流水作业调度问题的启发下，我尝试了列式子假设，没想到就解出来了！ 传送门">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T03:35:10.064Z">
+<meta property="og:updated_time" content="2019-07-22T15:48:20.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About me">
-<meta name="twitter:description" content="我是Neworld2002，也可以叫我蓝鸟。 之前一直在博客园，现在决定迁到这里来。 目标：省队！">
+<meta name="twitter:title" content="洛谷1842 · 奶牛玩杂技">
+<meta name="twitter:description" content="说实话一开始我不懂这题怎么想…… 但是在流水作业调度问题的启发下，我尝试了列式子假设，没想到就解出来了！ 传送门">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -171,32 +171,54 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-title" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-20190722" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      About me
+      洛谷1842 · 奶牛玩杂技
     </h1>
   
 
         
-        <a href="/2019/03/16/title/" class="archive-article-date">
-  	<time datetime="2019-03-16T15:45:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+        <a href="/2019/07/22/20190722/" class="archive-article-date">
+  	<time datetime="2019-07-22T15:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>我是Neworld2002，也可以叫我蓝鸟。</li>
-<li>之前一直在博客园，现在决定迁到这里来。</li>
-<li>目标：省队！</li>
-</ul>
+        <p>说实话一开始我不懂这题怎么想……</p>
+<p>但是在流水作业调度问题的启发下，我尝试了列式子假设，没想到就解出来了！</p>
+<p><a href="https://www.luogu.org/problemnew/show/P1842" target="_blank" rel="noopener">传送门</a></p>
+<a id="more"></a>
 <!--显示阅读次数-->
+<p>我们可以记所有奶牛中的相邻的两头奶牛为$i,j$</p>
+<p>记其重量为$w_i,w_j$，力量为$s_i,s_j$</p>
+<p>显然两头奶牛的上下顺序，对他们上或下的奶牛的压扁指数没有影响</p>
+<p>所以我们只考虑他们的压扁指数</p>
+<ul>
+<li><p>若$i$在上面，则$i,j$的压扁指数分别为$T_i = X -s_i,T_j = X+w_i-s_j$，这里的$X$是他们之上的奶牛总质量</p>
+</li>
+<li><p>若$j$在上面，则$i,j$的压扁指数分别为$T_i = X +w_j-s_i,T_j = X-s_j$</p>
+</li>
+</ul>
+<p>假设第一种情况一定会优于第二种情况</p>
+<p>即$\max(X-s_i,X+w_i-s_j) \leq \max(X+w_j-s_i,X-s_j)$</p>
+<ul>
+<li>若$max(X-s_i,X+w_i-s_j) = X-s_i$且$\max(X+w_j-s_i,X-s_j) = X+w_j-s_i$<ul>
+<li>即$s_j\geq s_i+w_i$，$w_j+s_j\geq s_i$，$w_j\geq 0$</li>
+<li>所以可以得出$w_j+s_j\geq s_i+w_i$</li>
+</ul>
+</li>
+</ul>
+<p>那么只需要满足$w_j+s_j\geq s_i+w_i$，就会使假设成立，其他的可能也不需要考虑了。</p>
+<p>所以两头奶牛，当$w+s$较小时，放在上面时，会使得两者的答案更优，如果每对相邻的奶牛都满足这个条件，就会使全局更优。所以按$w+s$从小到大排序即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 50005</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> w,s;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;node) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (w+s) &lt; (node.w+node.s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; A[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;A[i].w,&amp;A[i].s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::sort(A+<span class="number">1</span>,A+N+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">-2147483647</span>; <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i) &#123;</span><br><span class="line">        ans = <span class="built_in">std</span>::max(ans,sum-A[i].s);</span><br><span class="line">        sum += A[i].w;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -209,7 +231,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Neworld2002</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
         		</li>
       		
 		</ul>
@@ -265,7 +287,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/03/16/title/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://neworld2002.github.io/2019/07/22/20190722/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -282,15 +304,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/03/17/20190317/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          三明二中信息社第一学期期末考试题解
-        
-      </div>
-    </a>
   
+    <a href="/2019/07/20/20190720-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UVa10382 Watering Grass</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
