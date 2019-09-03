@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Neworld2002">
 <meta property="og:description" content="好妙的题 传送门">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-03T04:34:39.257Z">
+<meta property="og:updated_time" content="2019-09-03T04:39:21.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Luogu2512 · HAOI2008 · 糖果传递">
 <meta name="twitter:description" content="好妙的题 传送门">
@@ -198,7 +198,7 @@ var _hmt = _hmt || [];
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这题好难啊不会做………看了题解</p>
 <p>这题要把玄学的东西换成变量，然后变量归一</p>
 <p>设第$i$人给第$i-1$人$x_i$个糖果。每个人最后的糖果数量肯定都是$avg = \frac{\sum a_i}{n}$</p>
-<p>就可以得到这样的方程组：<br>$$<br>\left{<br>\begin{aligned}<br>a_1 - x_1 + x_2 = avg \<br>a_2 - x_2 + x_3 = avg \<br>a_3 - x_3 + x_4 = avg \<br>… \<br>a_n - x_n + x_1 = avg<br>\end{aligned}<br>\right.<br>$$<br>然后就可以用$x_1$表示出所有的$x_i$<br>$$<br>\begin{cases}<br>x_1 \<br>x_2 = avg - a_1 +x_1 \<br>x_3 = 2avg - (a_1+a_2) +x_1 \<br>… \<br>x_n = (n-1)avg - \sum a_i +x_1<br>\end{cases}<br>$$<br>我们最后要求的其实是<br>$$<br>\sum |x_i|<br>$$<br>然后把式子全部代进去，其实就可以换成几何意义：寻找一个点$x_1$，使得离若干个点的距离最近。</p>
+<p>就可以得到这样的方程组：<br>$$<br>a_1 - x_1 + x_2 = avg<br>$$<br>$$<br>a_2 - x_2 + x_3 = avg<br>$$<br>$$<br>a_3 - x_3 + x_4 = avg<br>$$<br>$$<br>a_n - x_n + x_1 = avg<br>$$<br>然后就可以用$x_1$表示出所有的$x_i$<br>$$<br>x_1<br>$$<br>$$<br>x_2 = avg - a_1 +x_1<br>$$<br>$$<br>x_3 = 2avg - (a_1+a_2) +x_1<br>$$<br>$$<br>x_n = (n-1)avg - \sum a_i +x_1<br>$$<br>我们最后要求的其实是<br>$$<br>\sum |x_i|<br>$$<br>然后把式子全部代进去，其实就可以换成几何意义：寻找一个点$x_1$，使得离若干个点的距离最近。</p>
 <p>这个位置就是中位数。证明可以脑补一下。</p>
 <p>然后就可以算出来所有的$x_i$，绝对值之和就是答案了。</p>
 <p>注意<code>long long</code>。</p>
